@@ -37,12 +37,12 @@ gaps in the breakdown are the gaps in the thinking.
 
 ```
 workflow        orchestrate the full cycle for a piece of work
-  breakdown     decompose work into a reviewable task list       [human judgment gate]
+  breakdown     decompose work into a reviewable task list [human judgment gate]
   write-task    produce a self-contained task document
   verify-task   confirm the document is executable without extra context
   create-tracker sequence and track all tasks for implementation
   implement     adhere to the task document
-  Human UAT
+  [Human UAT]
   feedback      if the outcome fell short, capture the gap and amend the task doc
   create-pr     prove the intention was met
 ```
