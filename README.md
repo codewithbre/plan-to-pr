@@ -49,6 +49,8 @@ gaps in the breakdown are the gaps in the thinking.
 
 ## Installation
 
+### Claude Code
+
 Copy the `.claude/commands/` directory into your project or global Claude
 Code config:
 
@@ -61,6 +63,28 @@ cp -r .claude/commands/ ~/.claude/commands/
 ```
 
 Skills are available as slash commands in Claude Code once installed.
+
+### Cursor
+
+Copy the skill files into your Cursor rules directory. Cursor expects `.mdc`
+files, so rename them on copy:
+
+```bash
+# project-level
+mkdir -p your-project/.cursor/rules
+for f in .claude/commands/*.md; do
+  cp "$f" "your-project/.cursor/rules/$(basename ${f%.md}.mdc)"
+done
+
+# global
+mkdir -p ~/.cursor/rules
+for f in .claude/commands/*.md; do
+  cp "$f" ~/.cursor/rules/$(basename ${f%.md}.mdc)
+done
+```
+
+Once installed, attach rules manually in Cursor's composer or set them as
+agent-requested so the AI pulls them in when relevant.
 
 ## Skills
 
