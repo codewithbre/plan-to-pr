@@ -80,12 +80,16 @@ before implementation begins.
 ```bash
 # project-level (applies to this repo only)
 cp -r skills/ your-project/.claude/commands/
+cp -r agents/ your-project/.claude/agents/
 
 # global (applies to all projects)
 cp -r skills/ ~/.claude/commands/
+cp -r agents/ ~/.claude/agents/
 ```
 
-Skills are available as slash commands in Claude Code once installed.
+Skills are available as slash commands and agents as subagents in Claude Code
+once installed. The `task-doc-verifier` agent is required for `/verify-task`
+to work.
 
 ### Cursor
 
