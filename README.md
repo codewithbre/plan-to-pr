@@ -114,37 +114,37 @@ agent-requested so the AI pulls them in when relevant.
 
 ## Skills
 
-### /workflow
+### workflow
 - **Responsibility:** Sequences the full planning cycle and enforces the human judgment gate at the breakdown.
 - **Does not:** implement, write task documents, or advance to the next step without explicit user approval.
-- **Connects to:** invokes /breakdown, /write-task, /verify-task, and /create-tracker in order; routes to /feedback or /create-pr after implementation.
+- **Connects to:** runs breakdown, write-task, verify-task, and create-tracker in order; routes to feedback or create-pr after implementation.
 
-### /breakdown
-- **Responsibility:** Decomposes work into a scoped, ordered, confidence-rated task list for human review.
+### breakdown
+- **Responsibility:** Decomposes work into a scoped, ordered, confidence-rated task list for human review. LOW confidence tasks surface a gap that needs human direction before a task document can be written.
 - **Does not:** write task documents, make implementation decisions, or proceed without approval.
-- **Connects to:** outputs the approved task list that /write-task turns into implementation guides, one task at a time.
+- **Connects to:** outputs the approved task list and overview that write-task turns into implementation guides, one task at a time.
 
-### /write-task
+### write-task
 - **Responsibility:** Produces the self-contained implementation guide an agent needs to execute one approved task.
 - **Does not:** implement anything, produce more than one document per invocation, or save without a confirmed location.
-- **Connects to:** consumes one approved task from /breakdown; output is verified by /verify-task.
+- **Connects to:** reads the overview's codebase analysis as starting context; consumes one approved task from breakdown; output is verified by verify-task.
 
-### /verify-task
+### verify-task
 - **Responsibility:** Confirms each task document is executable by a cold agent with no context beyond the file and the codebase.
 - **Does not:** modify, edit, or rewrite any task document.
-- **Connects to:** reads documents produced by /write-task; findings determine whether /create-tracker can proceed.
+- **Connects to:** reads documents produced by write-task alongside the overview; findings determine whether create-tracker can proceed.
 
-### /create-tracker
-- **Responsibility:** Produces a sequenced IMPLEMENTATION.md from verified task documents as the session-by-session execution guide.
+### create-tracker
+- **Responsibility:** Produces a lean status tracker from verified task documents so any agent or developer can orient and resume work cold.
 - **Does not:** implement tasks, modify task documents, or proceed if dependencies cannot be resolved.
-- **Connects to:** consumes verified documents from /verify-task; each task in the tracker closes with /create-pr.
+- **Connects to:** consumes verified documents from verify-task; each task in the tracker closes with create-pr.
 
-### /create-pr
+### create-pr
 - **Responsibility:** Produces a PR summary that proves an intention was met, framed as intention, outcome, value, and verification.
 - **Does not:** push, create, or modify the PR without explicit instruction.
-- **Connects to:** closes the loop on each task from /create-tracker; follows implementation and human UAT.
+- **Connects to:** closes the loop on each task from create-tracker; follows implementation and human UAT.
 
-### /feedback
-- **Responsibility:** Captures a UAT finding and appends a correction to the existing task document.
+### feedback
+- **Responsibility:** Captures a UAT finding and appends a correction to the existing task document without touching existing content.
 - **Does not:** modify or remove existing task document content, or write anything before the gap is confirmed by the human.
-- **Connects to:** amends the task document produced by /write-task; the correction is implemented before /create-pr is invoked.
+- **Connects to:** amends the task document produced by write-task; the correction is implemented before create-pr is invoked.
