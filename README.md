@@ -5,28 +5,28 @@ A planning framework for AI-assisted feature development.
 ## Why this exists
 
 For agentic and AI-assisted development to work, work needs to be broken
-down into deliverable and verifiable tasks based on intention and verified
+down into deliverable and auditable tasks based on intention and verified
 by outcome. Every problem is expected to have its quirks, but AI needs a
 system to be able to help.
 
-This is that system. It is a developer cycle from planning to PR, applicable
-to work of any size, from a quick focused task to a full epic.
+It is a developer cycle from planning to PR, applicable to work of any size, 
+from a quick focused task to a full epic.
 
 ## How it works
 
 The planning skills operate under the assumption that the implementing agent
-will be working with less context than the person who designed the work. The
-agent will only have the task document and the surface area of whatever it is
-working on. All relevant context must exist in that file. Any agent should be
-able to read the document, understand the intention, and produce a verifiable
-outcome.
+will be working with less context than the person/agent who designed/planned 
+the work. It is assumed that the implemnting agent will only have the task 
+document and the surface area of whatever it is working on. All relevant context 
+must exist in that file. Any agent should be able to read the document, understand 
+the intention, and produce a verifiable outcome.
 
-Implementation is adhering to the plan. Not interpreting it. Not extending it.
+Implementation is adhering to the plan. Not interpreting nor extending it.
 
 ## Human judgment is the foundation
 
 This framework embeds human judgment. The breakdown is where scope, intent,
-and task boundaries are decided by a person. Every step after formalizes and
+and task boundaries are decided by a human. Every step after formalizes and
 verifies that decision.
 
 This system is only as concrete as the human judgment embedded in it. If
@@ -42,7 +42,7 @@ gaps in the breakdown are the gaps in the thinking.
   /verify-task   confirm the document is executable without extra context
   /create-tracker sequence and track all tasks for implementation
   implement      adhere to the task document
-  UAT
+  Human UAT
   /feedback      if the outcome fell short, capture the gap and amend the task doc
   /create-pr     prove the intention was met
 ```
