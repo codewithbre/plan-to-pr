@@ -32,8 +32,32 @@ For the work described below:
 Do not begin work on any task. Present the breakdown and wait
 for my review.
 
-After I review and approve this breakdown, if I want standalone task
-documents written to files (one per task, agent-executable from the
-codebase alone), use /write-task for each approved task.
+After I review and approve this breakdown:
+
+1. DERIVE a directory name from the work description — short, kebab-case,
+   and descriptive of the intent (e.g. tasks/projects-page/,
+   tasks/auth-flow/). Ask the user to confirm the location and name
+   if unclear.
+
+2. WRITE an overview document to that directory named overview.md:
+
+   # <Feature / Intent Title>
+
+   ## Intent
+   What this body of work delivers and why it matters.
+
+   ## Tasks
+   | # | Task | Confidence | Depends On |
+   |---|------|------------|------------|
+   | 1 | <task title> | HIGH | — |
+
+   ## Execution order
+   Safe serial order for implementation.
+
+   ## Flags
+   Any decisions or unknowns surfaced during breakdown.
+
+3. For each approved task, invoke /write-task and save each document
+   to the same directory as the overview.
 
 Work to break down: $ARGUMENTS
