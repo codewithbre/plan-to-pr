@@ -16,7 +16,7 @@ from a quick focused task to a full epic.
 
 The planning skills operate under the assumption that the implementing agent
 will be working with less context than the person/agent who designed/planned 
-the work. It is assumed that the implemnting agent will only have the task 
+the work. It is assumed that the implementing agent will only have the task 
 document and the surface area of whatever it is working on. All relevant context 
 must exist in that file. Any agent should be able to read the document, understand 
 the intention, and produce a verifiable outcome.
