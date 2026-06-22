@@ -56,10 +56,16 @@ It constrains the agent to its role and prevents scope from bleeding
 between steps.
 
 The skills are interconnected. Each one's output is the next one's input.
-/breakdown produces the task list that /write-task documents. /write-task
-produces the documents that /verify-task checks. /verify-task produces the
-report that informs /create-tracker. /create-pr closes the loop that
-/breakdown opened. /feedback re-enters the cycle when UAT reveals a gap.
+
+`/breakdown` produces the task list that `/write-task` documents. 
+
+`/write-task` produces the documents that `/verify-task` checks. 
+
+`/verify-task` produces the report that informs `/create-tracker`. 
+
+`/create-pr` closes the loop that `/breakdown` opened. 
+
+`/feedback` re-enters the cycle when UAT reveals a gap.
 
 The planning skills (/breakdown and /write-task) include a confidence
 rating in their output. This gives the human a signal on how well the
