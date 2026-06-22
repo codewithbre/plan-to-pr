@@ -1,8 +1,9 @@
 Write a standalone task document for the functional change described
-below. This document must be self-contained: another agent, given only
-the codebase and this document, must be able to complete the task
-without any other context (this conversation, a breakdown list, or
-other task documents).
+below. This document is the implementation guide. It is the only
+instruction the implementing agent will receive beyond the codebase.
+It must be self-contained: another agent, given only this document
+and the codebase, must be able to complete the task without any other
+context (this conversation, a breakdown list, or other task documents).
 
 Do not implement anything. This is documentation only.
 

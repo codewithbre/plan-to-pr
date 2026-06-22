@@ -116,9 +116,9 @@ the breakdown for human review and waits for approval. Does not write
 documents or make decisions.
 
 ### /write-task
-Produces a single self-contained task document for one approved task. The
-document must be executable by any agent with no context beyond the file
-and the codebase.
+Produces the implementation guide for one approved task. This document is
+the only instruction the implementing agent will receive beyond the codebase.
+It must contain everything needed to complete the task cold.
 
 ### /verify-task
 Spawns a fresh agent to read each task document cold and confirm it is
