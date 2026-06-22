@@ -105,34 +105,36 @@ agent-requested so the AI pulls them in when relevant.
 ## Skills
 
 ### /workflow
-The entry point for the full cycle. Invoke this with a description of the
-work and it will orchestrate each step in sequence, enforcing the human
-judgment gate at the breakdown before any documents are written or
-implementation begins.
+- **Responsibility:** Sequences the full planning cycle and enforces the human judgment gate at the breakdown.
+- **Does not:** implement, write task documents, or advance to the next step without explicit user approval.
+- **Connects to:** invokes /breakdown, /write-task, /verify-task, and /create-tracker in order; routes to /feedback or /create-pr after implementation.
 
 ### /breakdown
-Decomposes a piece of work into a list of scoped, ordered tasks. Presents
-the breakdown for human review and waits for approval. Does not write
-documents or make decisions.
+- **Responsibility:** Decomposes work into a scoped, ordered, confidence-rated task list for human review.
+- **Does not:** write task documents, make implementation decisions, or proceed without approval.
+- **Connects to:** outputs the approved task list that /write-task turns into implementation guides, one task at a time.
 
 ### /write-task
-Produces the implementation guide for one approved task. This document is
-the only instruction the implementing agent will receive beyond the codebase.
-It must contain everything needed to complete the task cold.
+- **Responsibility:** Produces the self-contained implementation guide an agent needs to execute one approved task.
+- **Does not:** implement anything, produce more than one document per invocation, or save without a confirmed location.
+- **Connects to:** consumes one approved task from /breakdown; output is verified by /verify-task.
 
 ### /verify-task
-Spawns a fresh agent to read each task document cold and confirm it is
-self-contained and executable. Surfaces gaps without editing the documents.
+- **Responsibility:** Confirms each task document is executable by a cold agent with no context beyond the file and the codebase.
+- **Does not:** modify, edit, or rewrite any task document.
+- **Connects to:** reads documents produced by /write-task; findings determine whether /create-tracker can proceed.
 
 ### /create-tracker
-Produces an IMPLEMENTATION.md from the verified task documents. Sequences
-tasks by dependency and provides a session-by-session execution guide.
+- **Responsibility:** Produces a sequenced IMPLEMENTATION.md from verified task documents as the session-by-session execution guide.
+- **Does not:** implement tasks, modify task documents, or proceed if dependencies cannot be resolved.
+- **Connects to:** consumes verified documents from /verify-task; each task in the tracker closes with /create-pr.
 
 ### /create-pr
-Produces a PR summary framed as proof that an intention was met. Title,
-intention, outcome, value, and verification. Not a changelog.
+- **Responsibility:** Produces a PR summary that proves an intention was met, framed as intention, outcome, value, and verification.
+- **Does not:** push, create, or modify the PR without explicit instruction.
+- **Connects to:** closes the loop on each task from /create-tracker; follows implementation and human UAT.
 
 ### /feedback
-Captures a UAT finding and appends a correction to the existing task
-document without modifying original content. The gap is confirmed by the
-human before anything is written.
+- **Responsibility:** Captures a UAT finding and appends a correction to the existing task document.
+- **Does not:** modify or remove existing task document content, or write anything before the gap is confirmed by the human.
+- **Connects to:** amends the task document produced by /write-task; the correction is implemented before /create-pr is invoked.
