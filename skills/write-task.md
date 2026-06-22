@@ -53,15 +53,16 @@ Do not implement anything. This is documentation only.
 3. Tasks must be independent of each other. Do not write "see Task 3"
    or rely on shared context from a breakdown - if information from
    another task is needed, restate it here.
-   Tasks are executed by isolated agents with no shared context beyond the codebase and this document.
-   Understand that a different agent may implement tasks and these agents will be agnostic of each
-   other. Agents only have the context of the codebase and the task document created.
-   If this task depends on a prior change, restate what that change produces and where to find it in the codebase.
+   Tasks are executed by isolated agents with no shared context beyond
+   the codebase and this document. A different agent may implement each
+   task with no awareness of the others.
+   If this task depends on a prior change, restate what that change
+   produces and where to find it in the codebase.
 
-4. Each invocation of this command produces exactly one document,
+4. Each invocation of this skill produces exactly one document,
    corresponding to one task. By convention, one task corresponds to
    one PR's worth of work - name and scope the document accordingly
-   (e.g. tasks/<task-name>.md).
+   (e.g. tasks/feature-name/task-01-name.md).
 
 5. After producing the document, provide a confidence rating before saving:
    - CONFIDENCE: HIGH / MEDIUM / LOW
@@ -69,13 +70,12 @@ Do not implement anything. This is documentation only.
      MEDIUM: one or more sections may require inference from the codebase to fill gaps.
      LOW: significant gaps exist that should be resolved before implementation begins.
    State the rating and the specific reason. A low rating is not a failure —
-   it is a signal to the human to refine the task before proceeding.
+   it surfaces where human judgment is needed before the task proceeds.
 
-6. ASK where to save the document (e.g. a tasks/ directory) if not
-   specified. Do not write the file until a location is confirmed.
+6. ASK where to save the document if not already established by the breakdown.
+   Do not write the file until a location is confirmed.
 
-After the document is saved, if I want a fresh agent with no access to
-this conversation to confirm the document is self-contained and
-executable, use /verify-task on the saved file path.
+After the document is saved, use the verify-task skill on the saved file
+path to confirm it is self-contained and executable by a cold agent.
 
-Task to document: $ARGUMENTS
+Task to document: [the approved task from the breakdown]

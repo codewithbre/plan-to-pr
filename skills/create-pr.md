@@ -1,5 +1,5 @@
 Create a pull request summary for the current changes.
-This command has one responsibility: produce a summary that proves
+This skill has one responsibility: produce a summary that proves
 an intention was met. Do not push, create, or modify the PR unless
 explicitly instructed. This is documentation only.
 
@@ -44,4 +44,4 @@ explicitly instructed. This is documentation only.
    the Outcome? Does the Outcome justify the Value claim? Update
    if not.
 
-Target branch: $ARGUMENTS
+Target branch: [branch to compare against the base branch]

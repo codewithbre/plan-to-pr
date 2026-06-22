@@ -8,7 +8,7 @@ Human judgment is front-loaded. The user articulates the gap before any
 correction work begins. The implementing agent delivers the correction. It
 does not interpret what the correction should be.
 
-UAT finding: $ARGUMENTS
+UAT finding: [describe what was observed vs. what was expected]
 
 ## Step 1: Capture the gap
 Ask the user to describe:
