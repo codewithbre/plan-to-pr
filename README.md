@@ -67,11 +67,11 @@ The skills are interconnected. Each one's output is the next one's input.
 
 `/feedback` re-enters the cycle when UAT reveals a gap.
 
-The planning skills (/breakdown and /write-task) include a confidence
-rating in their output. This gives the human a signal on how well the
-work is scoped before deciding to proceed. A low confidence rating is not
-a failure. It is useful information. It surfaces where the thinking needs
-to go deeper before implementation begins.
+The planning skills (`/breakdown` and `/write-task`) include a confidence
+rating in their output (`high | med | low`). This gives the human a signal 
+on how well the work is scoped before deciding to proceed. A low confidence 
+rating is not a failure. It surfaces where the thinking needs to go deeper 
+before implementation begins.
 
 ## Installation
 
