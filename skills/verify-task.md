@@ -26,5 +26,16 @@ Target: [path to a task document or directory of task documents]
    - Full gap list per document, grouped by recommended action
      (REWRITE / ADD CONTEXT / ASK AUTHOR)
 
-4. Do not edit any task document. If asked to act on a finding and the
+4. After all documents are assessed, add a brief Process observations
+   section if any of the following apply — omit it if none do:
+   - Gaps required significant codebase re-exploration: the overview's
+     Codebase Analysis was incomplete.
+   - Multiple JUDGMENT-REQUIRED criteria across documents: the breakdown
+     did not resolve enough detail before task docs were written.
+   - Dependencies were not described concretely: task ordering in the
+     breakdown was not sufficiently specific.
+   These are not fixes for the current docs. They are signals for
+   improving future breakdowns.
+
+5. Do not edit any task document. If asked to act on a finding and the
    fix is ambiguous, surface the ambiguity and wait for direction.

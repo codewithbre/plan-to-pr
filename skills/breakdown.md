@@ -31,8 +31,20 @@ For the work described:
 5. FLAG any areas where you lack enough information to define
    a task. State what decisions are needed before that task can be scoped.
 
-Do not begin work on any task. Present the breakdown and wait
-for review.
+Do not begin work on any task. Present the breakdown, then provide
+a readiness summary:
+
+READY TO PROCEED (HIGH / MEDIUM confidence):
+  - Task N: <title>
+
+NEEDS DIRECTION (LOW confidence):
+  - Task N: <title> — <what needs to be resolved before this can proceed>
+
+Tasks that are READY can proceed to the write-task skill immediately
+after approval. Tasks that NEED DIRECTION must be resolved — clarified
+to HIGH or MEDIUM, or removed — before write-task can be invoked for them.
+
+Wait for review.
 
 After the breakdown is approved:
 
@@ -77,6 +89,8 @@ After the breakdown is approved:
    Any decisions or unknowns surfaced during breakdown.
 
 3. For each approved task, use the write-task skill and save each document
-   to the same directory as the overview.
+   to the same directory as the overview. LOW confidence tasks that have
+   not been resolved are captured as flags in the overview — do not invoke
+   write-task for them until the human provides direction.
 
 Work to break down: [describe the feature, epic, or task to plan]
