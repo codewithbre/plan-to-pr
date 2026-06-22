@@ -16,6 +16,10 @@ Target: $ARGUMENTS
 2. For each task document, spawn a `task-doc-verifier` agent with the
    document's absolute path. It has no access to this conversation - it
    reads the document cold, exactly as the eventual execution agent would.
+   If an overview.md exists in the same directory, pass its path to the
+   verifier as well. The verifier should use the overview's Codebase
+   Analysis section as its starting context rather than re-exploring the
+   codebase from scratch.
 
 3. Present a summary:
    - One line per document: filename + confidence rating

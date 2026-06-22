@@ -46,6 +46,24 @@ After I review and approve this breakdown:
    ## Intent
    What this body of work delivers and why it matters.
 
+   ## Codebase Analysis
+   Key files, patterns, and conventions discovered during breakdown.
+   This section exists so /write-task and /verify-task can reference it
+   instead of re-exploring the codebase from scratch.
+
+   ### Key files
+   | File | Purpose |
+   |------|---------|
+   | `path/to/file` | What it does and why it matters for this work |
+
+   ### Patterns
+   Naming conventions, import patterns, component structure, data flow —
+   anything an implementing agent needs to follow.
+
+   ### Conventions
+   Project-specific rules (typing, styling, accessibility, testing) that
+   apply to this body of work.
+
    ## Tasks
    | # | Task | Confidence | Depends On |
    |---|------|------------|------------|

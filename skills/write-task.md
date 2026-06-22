@@ -7,6 +7,12 @@ context (this conversation, a breakdown list, or other task documents).
 
 Do not implement anything. This is documentation only.
 
+0. CHECK for an overview.md in the task directory before exploring the codebase.
+   If one exists, read its Codebase Analysis section first. Use the key files,
+   patterns, and conventions it documents as the starting context for this task.
+   Only explore the codebase further for details specific to this task that are
+   not already covered. This avoids redundant codebase re-exploration across tasks.
+
 1. ANALYZE the codebase to confirm the task is valid per Task Integrity
    (single functional change, clear intent, clear location, clear
    output, verifiable in one pass). If it is not, stop and explain why
