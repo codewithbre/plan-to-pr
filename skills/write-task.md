@@ -56,7 +56,15 @@ Do not implement anything. This is documentation only.
    one PR's worth of work - name and scope the document accordingly
    (e.g. tasks/<task-name>.md).
 
-5. ASK where to save the document (e.g. a tasks/ directory) if not
+5. After producing the document, provide a confidence rating before saving:
+   - CONFIDENCE: HIGH / MEDIUM / LOW
+     HIGH: the document is complete and an agent can execute it without ambiguity.
+     MEDIUM: one or more sections may require inference from the codebase to fill gaps.
+     LOW: significant gaps exist that should be resolved before implementation begins.
+   State the rating and the specific reason. A low rating is not a failure —
+   it is a signal to the human to refine the task before proceeding.
+
+6. ASK where to save the document (e.g. a tasks/ directory) if not
    specified. Do not write the file until a location is confirmed.
 
 After the document is saved, if I want a fresh agent with no access to

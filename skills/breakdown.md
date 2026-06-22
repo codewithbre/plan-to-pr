@@ -18,6 +18,10 @@ For the work described below:
    - LOCATION: What files/components are likely in scope.
    - DEPENDS ON: Which other tasks must be completed first (if any).
    - ACCEPTANCE: How to verify this task is complete (observable output).
+   - CONFIDENCE: HIGH / MEDIUM / LOW — how well scoped this task is.
+     HIGH: intent, location, and acceptance criteria are all clear.
+     MEDIUM: intent is clear but location or acceptance criteria need more definition.
+     LOW: scope or acceptance criteria are unclear and need resolution before a task doc can be written.
 
 4. ORDER the tasks by dependency, then by logical sequence.
 

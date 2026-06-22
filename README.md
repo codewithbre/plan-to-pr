@@ -47,6 +47,26 @@ gaps in the breakdown are the gaps in the thinking.
   /create-pr     prove the intention was met
 ```
 
+## How the skills are designed
+
+Each skill has a single stated responsibility. It does exactly that and
+nothing else. Every skill opens by declaring what it does and, just as
+importantly, what it will not do. This negative framing is intentional.
+It constrains the agent to its role and prevents scope from bleeding
+between steps.
+
+The skills are interconnected. Each one's output is the next one's input.
+/breakdown produces the task list that /write-task documents. /write-task
+produces the documents that /verify-task checks. /verify-task produces the
+report that informs /create-tracker. /create-pr closes the loop that
+/breakdown opened. /feedback re-enters the cycle when UAT reveals a gap.
+
+The planning skills (/breakdown and /write-task) include a confidence
+rating in their output. This gives the human a signal on how well the
+work is scoped before deciding to proceed. A low confidence rating is not
+a failure. It is useful information. It surfaces where the thinking needs
+to go deeper before implementation begins.
+
 ## Installation
 
 ### Claude Code
