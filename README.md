@@ -28,14 +28,25 @@ the intention, and produce a verifiable outcome.
 
 Implementation is adhering to the plan. Not interpreting nor extending it.
 
-## Implementation and testing agnostic
+## Designed for delegation
 
-plan-to-pr produces task documents. It has no opinion on how those documents
-are implemented or how the resulting code is tested and deployed.
+Humans cannot micro-manage agentic systems without becoming a bottleneck to
+them. To delegate means to set expectations and verify that the work is being
+done as it should. That is what this framework makes possible.
 
-The task document is the interface. Any agent, harness, or developer that can
-read a task document and produce working code satisfies the contract. The
-planning harness does not change based on what comes after it.
+The plan is where human judgment lives — not as a checkpoint on every action,
+but as an upfront decision about what success looks like. The task document is
+the delegation contract: it captures what the human decided, what the agent is
+responsible for, and how to verify the handoff worked. Once that contract exists,
+the agent executes against it autonomously. The human comes back at the end to
+verify the outcome, not to supervise the steps.
+
+This is why plan-to-pr has no opinion on how task documents are implemented or
+how the resulting code is tested and deployed. Specifying the how would be
+micro-management. The framework specifies the what — intent, scope, and
+acceptance criteria — and leaves everything else to the agent. Any agent,
+harness, or developer that can read a task document and produce a verifiable
+outcome satisfies the contract.
 
 ## Human judgment is the foundation
 
