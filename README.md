@@ -28,25 +28,25 @@ the intention, and produce a verifiable outcome.
 
 Implementation is adhering to the plan. Not interpreting nor extending it.
 
-## Designed for delegation
+## Designed for delegation - Implementation, testing, and deployment agnostic
 
 Humans cannot micro-manage agentic systems without becoming a bottleneck to
 them. To delegate means to set expectations and verify that the work is being
-done as it should. That is what this framework makes possible.
+done as it should. 
 
-The plan is where human judgment lives — not as a checkpoint on every action,
+The plan is where human judgment lives, not as a checkpoint on every action,
 but as an upfront decision about what success looks like. The task document is
 the delegation contract: it captures what the human decided, what the agent is
 responsible for, and how to verify the handoff worked. Once that contract exists,
 the agent executes against it autonomously. The human comes back at the end to
-verify the outcome, not to supervise the steps.
+verify the outcome, not to supervise the steps as this isn't realistic at large 
+scales of output.
 
-This is why plan-to-pr has no opinion on how task documents are implemented or
-how the resulting code is tested and deployed. Specifying the how would be
-micro-management. The framework specifies the what — intent, scope, and
-acceptance criteria — and leaves everything else to the agent. Any agent,
-harness, or developer that can read a task document and produce a verifiable
-outcome satisfies the contract.
+The framework specifies what matters to the human (intent, scope, and acceptance
+criteria) and leaves everything else to the agent. Any agentic system,
+complementary implementation harness, or developer that can read a task document
+and produce a verifiable outcome satisfies the contract. The ambiguity of what to
+do is completely removed. Implementation focuses on how.
 
 ## Human judgment is the foundation
 
@@ -55,8 +55,12 @@ and task boundaries are decided by a human. Every step after formalizes and
 verifies that decision.
 
 This system is only as concrete as the human judgment embedded in it. If
-someone does not understand the problem, this system will reveal that. The
-gaps in the breakdown are the gaps in the thinking.
+the human does not understand the problem and its scope, this system will 
+reveal that. The gaps in the breakdown are the gaps in the thinking. That 
+is by design: iteration feeds back into the breakdown, and the outcome either 
+confirms the intent or surfaces what was missing from it. Perfect planning 
+every time is impossible. Getting it right on the first pass was never the 
+expectation.
 
 ## The cycle
 
