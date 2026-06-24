@@ -1,6 +1,6 @@
 Create an IMPLEMENTATION.md tracker document from a set of completed task documents.
 This is the 4th step in the planning workflow:
-/breakdown -> /write-task -> /verify-task -> /create-tracker
+/p2p-breakdown -> /p2p-write-task -> /p2p-verify-task -> /p2p-create-tracker
 
 This command has one responsibility: produce a lean status tracker that lets
 any agent or developer orient and resume work cold. Do not implement anything.
