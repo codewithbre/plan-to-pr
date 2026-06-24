@@ -28,6 +28,15 @@ the intention, and produce a verifiable outcome.
 
 Implementation is adhering to the plan. Not interpreting nor extending it.
 
+## Implementation and testing agnostic
+
+plan-to-pr produces task documents. It has no opinion on how those documents
+are implemented or how the resulting code is tested and deployed.
+
+The task document is the interface. Any agent, harness, or developer that can
+read a task document and produce working code satisfies the contract. The
+planning harness does not change based on what comes after it.
+
 ## Human judgment is the foundation
 
 This framework embeds human judgment. The breakdown is where scope, intent,
